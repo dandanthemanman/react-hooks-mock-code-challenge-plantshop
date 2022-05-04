@@ -1,9 +1,15 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList() {
+function PlantList({searchedPlants}) {
+
+const populatePlants = searchedPlants.map(plant => 
+  <PlantCard name={plant.name} image= {plant.image} price={plant.price}/>
+);
+
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="cards">{populatePlants}
+  </ul>
   );
 }
 
